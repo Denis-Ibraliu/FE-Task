@@ -1,4 +1,6 @@
 @import "app.css";
+@import "icons.css";
+@import "table.css";
 
 html {
   box-sizing: border-box;

@@ -22,6 +22,7 @@ export const useQuery = ({
   const fetchUrl = serverBaseUrl + url;
 
   const dataFetch = async () => {
+    setLoading(true);
     try {
       const data = await (await fetch(fetchUrl)).json();
 
@@ -43,13 +44,12 @@ export const useQuery = ({
   };
 
   useEffect(() => {
-    setLoading(true);
     dataFetch();
   }, [...deps]);
 
   return {
     data,
     loading,
-    dataFetch,
+    fetchData: dataFetch,
   };
 };
