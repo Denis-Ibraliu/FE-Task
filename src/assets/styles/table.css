@@ -1,0 +1,7 @@
+.headless-table .ant-table-thead th {
+  background-color: transparent !important;
+}
+
+.headless-table .ant-table-thead th::before {
+  display: none;
+}

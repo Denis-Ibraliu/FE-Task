@@ -1,0 +1,8 @@
+.app {
+  margin: 0 auto;
+  max-width: 1280px;
+}
+
+.required {
+  color: #ff4d4f;
+}
