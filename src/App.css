@@ -1,0 +1,179 @@
+.buttonStyle {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.redButton {
+  background-color: #e33131;
+  color: white;
+}
+.buttonStyle.redButton > img {
+  height: 1em;
+}
+.redButton:hover {
+  background-color: #cc0000;
+}
+
+.redButton:active {
+  background-color: #990000;
+}
+
+.actionButton {
+  background-color: transparent;
+  color: #4e5964;
+}
+.actionButton:hover {
+  /* background-color: #ffe2e2; */
+  transform: scale(1.3);
+}
+
+.actionButton:active {
+  /* background-color: #979797; */
+  transform: scale(1.5);
+}
+
+.buttonStyle.actionButton > img {
+  height: 1.3em;
+  color: #ccd2e3;
+}
+
+.createUserButton {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0px 5px;
+}
+
+tbody tr {
+  outline: 1px solid #e7eaf3;
+  border-radius: 5px;
+}
+
+th {
+  padding: 10px;
+  color: #4e5964;
+  font-size: 14px;
+  text-align: start;
+}
+
+th:last-child {
+  text-align: end;
+}
+
+td {
+  color: #4e5964;
+  padding-left: 15px;
+}
+.actionButtonDiv {
+  display: flex;
+  /* gap: 5px; */
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background-color: #fff;
+  border-radius: 5px;
+  width: 590px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #e7eaf3;
+}
+
+.modal-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #4e5964;
+}
+
+.modal-close {
+  background-color: transparent;
+  color: #4e5964;
+}
+.modal-close:hover {
+  /* background-color: #ffe2e2; */
+  transform: scale(1.3);
+}
+
+.modal-close:active {
+  /* background-color: #979797; */
+  transform: scale(1.5);
+}
+
+.buttonStyle.modal-close > img {
+  height: 1.5em;
+}
+
+.modal-content {
+  padding: 30px;
+}
+
+.formItem {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.formItem > label {
+  color: #4e5964;
+  font-size: 12px;
+  font-weight: 600;
+}
+.formItem > input {
+  border: 1px solid #e7eaf3;
+  border-radius: 5px;
+  padding: 11px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(
+    2,
+    250px
+  ); /* Adjust the number and width of columns as needed */
+  grid-gap: 25px; /* Adjust the gap between grid items */
+}
+
+.saveButtonDiv {
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+}
+.saveButtonDiv > button {
+  width: 100px;
+}
+
+.errorMessage {
+  font-size: 10px;
+  color: red;
+}
