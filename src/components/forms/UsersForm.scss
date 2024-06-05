@@ -1,0 +1,27 @@
+.users-form-container {
+  width: 590px;
+  .modal-body {
+    width: 100%;
+    form {
+      width: calc(100% - 30px);
+      display: grid;
+      grid-template-columns: 50% 50%;
+      row-gap: 30px;
+      column-gap: 30px;
+      box-sizing: border-box;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .users-form-container {
+    width: calc(100vw - 60px) !important;
+
+    .modal-body {
+      form {
+        width: 100%;
+        grid-template-columns: 100%;
+      }
+    }
+  }
+}

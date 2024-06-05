@@ -1,0 +1,219 @@
+@use "sass:color";
+
+$primary-color: #e33131;
+$radius: 5px;
+$bold: 500;
+$strong-weight: 700;
+$text-weight: 400;
+$text-size: 12px;
+$label-text-size: 14px;
+$header-text-size: 18px;
+$border-color: #e7eaf3;
+$white: #ffffff;
+$color: #4e5964;
+$action-icon-fill: #273b4a;
+$contrast-background: #f4f7fb;
+$contrast-foreground: #ccd2e3;
+$border-width: 1px;
+$modal-mask-color: transparent;
+$modal-shadow: 0px 4px 45px 0px #00000026;
+$button-min-width: 100px;
+$inputError: #e33131;
+$dimColor: #c4c4c4;
+
+* {
+  font-family: "Roboto", sans-serif;
+  font-weight: $text-weight;
+  font-size: $text-size;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  color: $color;
+  justify-content: center;
+  align-items: center;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+.button-base-style {
+  border-radius: $radius;
+  border-width: 0;
+  background-color: $primary-color;
+  color: $white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 10px;
+  padding: 10.5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  min-width: $button-min-width;
+
+  &:hover {
+    background-color: color.scale($color: $primary-color, $lightness: -10%);
+  }
+
+  .button-inner-text {
+    color: inherit;
+  }
+
+  .button-inner-icon {
+    color: inherit;
+    height: 12px;
+    width: 12px;
+
+    svg {
+      height: 100%;
+      width: 100%;
+    }
+
+    svg,
+    path {
+      fill: $white;
+    }
+  }
+}
+
+.cancel-button {
+  height: 21px;
+  width: 21px;
+  border-radius: 50%;
+  border-width: 0;
+  background-color: $contrast-background;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: color.scale(
+      $color: $contrast-background,
+      $lightness: -10%
+    );
+  }
+
+  svg {
+    height: 10.5px;
+    width: 10.5px;
+  }
+
+  svg,
+  path {
+    fill: $contrast-foreground;
+  }
+}
+
+.modal-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100dvh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  background-color: $modal-mask-color;
+}
+
+.modal {
+  height: fit-content;
+  width: fit-content;
+  min-height: 300px;
+  min-width: 250px;
+  background-color: $white;
+  border-radius: $radius;
+  box-shadow: $modal-shadow;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  animation: modalShow 0.3s ease-in-out;
+
+  .modal-header {
+    height: 62px;
+    width: 100%;
+    gap: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $border-color;
+    padding: 15px 30px;
+    box-sizing: border-box;
+
+    .title {
+      font-weight: $strong-weight;
+      font-size: $header-text-size;
+      cursor: default;
+    }
+  }
+
+  .modal-body {
+    height: fit-content;
+    min-height: 178px;
+    width: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+    max-height: calc(100dvh - 184px);
+    overflow: auto;
+  }
+
+  .modal-footer {
+    width: 100%;
+    height: 62px;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    box-sizing: border-box;
+  }
+}
+
+@keyframes modalShow {
+  from {
+    transform: translateY(20px);
+    opacity: 0.5;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.base-input-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+  flex-direction: column;
+  width: 250px;
+
+  .base-input-label {
+    font-weight: $strong-weight;
+  }
+
+  .input-error-message {
+    color: $inputError;
+  }
+
+  .base-form-input {
+    border-radius: $radius;
+    border: $border-width solid $border-color;
+    outline: none;
+    height: 40px;
+    width: 100%;
+    padding: 0 13px;
+    box-sizing: border-box;
+
+    &::placeholder {
+      color: $dimColor;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+@use "/src/index.scss" as index;
+
+.main-users-page {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px;
+  gap: 10px;
+  box-sizing: border-box;
+
+  .users-controller {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .users-table {
+    width: 100%;
+    height: calc(100vh - 105px);
+    overflow: auto;
+
+    table {
+      // height: calc(100vh - 105px);
+      width: 100%;
+    }
+
+    .actions-col {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      gap: 20px;
+
+      .action-icon {
+        cursor: pointer;
+        svg {
+          height: 14px;
+          width: 14px;
+          fill: index.$contrast-foreground;
+        }
+      }
+    }
+  }
+}
