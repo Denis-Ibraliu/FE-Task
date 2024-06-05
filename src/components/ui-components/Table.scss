@@ -1,0 +1,51 @@
+@use "/src/index.scss" as index;
+
+.main-table-container {
+  table {
+    border-collapse: separate;
+    border-spacing: 0 7px;
+  }
+
+  thead {
+    padding: 10px 0;
+    th {
+      height: 30px;
+      font-weight: index.$strong-weight;
+      font-size: index.$label-text-size;
+      text-align: left;
+    }
+  }
+
+  tbody {
+    overflow-y: auto;
+    tr {
+      column-gap: 0;
+    }
+
+    td {
+      border-top: index.$border-width solid index.$border-color;
+      border-bottom: index.$border-width solid index.$border-color;
+
+      &:first-child {
+        border-left: index.$border-width solid index.$border-color;
+        border-top-left-radius: index.$radius;
+        border-bottom-left-radius: index.$radius;
+      }
+
+      &:last-child {
+        border-right: index.$border-width solid index.$border-color;
+        border-top-right-radius: index.$radius;
+        border-bottom-right-radius: index.$radius;
+      }
+    }
+  }
+
+  td {
+    height: 45px;
+  }
+
+  td,
+  th {
+    padding: 0 20px;
+  }
+}
